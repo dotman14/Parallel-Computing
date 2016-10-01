@@ -23,11 +23,13 @@ int main(int argc, char* argv[])
     ifstream infile;
     ofstream outfile;
     string line, type, maxpx, comment;
+    string imagepath = "path/to/file.pgm";
+    string outputimage = "path/to/output.pgm";
     int cols, rows;
     const int KERNEL_SIZE = 3;
     
-    infile.open("/Users/dotun/Desktop/file/file/ken.pgm", ios::binary | ios::in);
-    outfile.open("/Users/dotun/Desktop/file/file/output.pgm", ios::binary | ios::out);
+    infile.open(imagepath, ios::binary | ios::in);
+    outfile.open(outputimage, ios::binary | ios::out);
     
     getline(infile, type);  //Read first line and grab the type of file
     getline(infile, comment);  //Read second line and discard it
